@@ -2,23 +2,23 @@ version: "3.1"
 
 services:
   mongo:
+    container_name: mongodb
+    hostname: mongodb
     image: mongo
     restart: always
+    ports:
+      - 27017:27017
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: password
-
+      MONGO_INITDB_DATABASE: gamexdb
+    volumes:
+      - ./docker/data/:/mongodata
+    #command: bash -c "mongoimport --db gamexdb --collection games --type json --file /mongodata/games.json --jsonArray"
+    
   mongo-express:
+    container_name: mongo-express
     image: mongo-express
     restart: always
     ports:
       - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: password
-    links:
-      - mongo
-  mongo-seed:
-    build: ./mongo
     links:
       - mongo

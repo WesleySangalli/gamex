@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/WesleySangalli/gamex/issues"
   },
-  "homepage": "https://github.com/WesleySangalli/gamex#readme"
+  "homepage": "https://github.com/WesleySangalli/gamex#readme",
+  "devDependencies": {}
 }
