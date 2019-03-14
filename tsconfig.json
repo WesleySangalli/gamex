@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",                    
+    "module": "commonjs",                  
+    "sourceMap": true,                     
+    "outDir": "./build",                    
+  },
+  "exclude": ["node_modules"],
+  "files": ["app.ts"]
+}
