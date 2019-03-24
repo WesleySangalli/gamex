@@ -12,7 +12,7 @@ services:
       MONGO_INITDB_DATABASE: gamexdb
     volumes:
       - ./docker/data/:/mongodata
-    #command: bash -c "mongoimport --db gamexdb --collection games --type json --file /mongodata/games.json --jsonArray"
+    #command: bash -c "chmod 665 mongodata && mongoimport --db gamexdb --collection games --type json --file ./mongodata/games.json --jsonArray"
     
   mongo-express:
     container_name: mongo-express

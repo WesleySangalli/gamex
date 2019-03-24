@@ -2,9 +2,10 @@
   "name": "gamex",
   "version": "1.0.0",
   "description": "A game index API",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
-    "start": "tsc --outDir build app.ts && node ./build/app.js"
+    "build": "./node_modules/.bin/tsc --outDir build app.ts",
+    "start": "npm run build && node build/app.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,15 @@
   },
   "homepage": "https://github.com/WesleySangalli/gamex#readme",
   "devDependencies": {
+    "@types/node": "^11.11.6",
     "typescript": "^3.3.3333"
   },
   "dependencies": {
     "mongoose": "^5.4.19",
-    "restify": "^8.1.0"
+    "morgan": "^1.9.1",
+    "restify": "^8.1.0",
+    "restify-errors": "^7.0.0",
+    "restify-plugins": "^1.6.0",
+    "winston": "^3.2.1"
   }
 }
