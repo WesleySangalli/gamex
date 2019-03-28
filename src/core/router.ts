@@ -38,13 +38,20 @@ server.get("/games", (req, res, next) => {
 server.post("/query", (req, res, next) => {
   logger.debug(req.body, "Received query request");
 
-  if (!req.is('application/json')) {
-    return next(
-      new errors.InvalidContentError("Expects 'application/json'"),
-    );
+  if (!req.is("application/json")) {
+    return next(new errors.InvalidContentError("Expects 'application/json'"));
   }
 
   const query = req.body || {};
   games.find(query).then(list => res.json(list || {}));
+  next();
+});
+
+server.get("/games/:name", (req, res, next) => {
+  const name = req.query.name;
+  console.log(name);
+  games
+    .find({ Name: { $regex: name, $options: "i" } })
+    .then(list => res.json(list || {}));
   next();
 });
