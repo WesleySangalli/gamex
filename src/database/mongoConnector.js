@@ -1,6 +1,6 @@
-import * as mongoose from "mongoose";
-import config from "../config/appconfig";
-import logger from "../logger/logger";
+const mongoose = require("mongoose");
+const config = require("../config/appconfig");
+const logger = require("../logger/logger");
 
 mongoose.connect(config.db.uri, { useNewUrlParser: true }).catch(err => {
   logger.error("Error connecting to mongodb", err);

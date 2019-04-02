@@ -1,9 +1,9 @@
-import * as winston from "winston";
-import config from "../config/appconfig";
+const winston = require("winston");
+const config = require("../config/appconfig");
 
 const logger = winston.createLogger({
   transports: [new winston.transports.Console(config.logger.console)],
   exitOnError: false
 });
 
-export default logger;
+module.exports = logger;
