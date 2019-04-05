@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "debug": "nodemon --inspect npm start",
+    "debug": "nodemon --inspect src/app.js",
     "watch": "nodemon --exec npm start"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "nodemon": "^1.18.10"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.19",
     "morgan": "^1.9.1",
