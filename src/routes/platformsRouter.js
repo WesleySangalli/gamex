@@ -8,7 +8,7 @@ router.get("/", (req, res, next) => {
     .catch(err => res.status(400).send(err));
 });
 
-router.get("/:platform", (req, res, next) => {
+router.get("/:platform/games", (req, res, next) => {
   platformsRepository
     .getGamesForPlatform(req.params.platform)
     .then(result => res.json(result || {}))
