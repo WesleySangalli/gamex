@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const logger = require("../logger/logger");
 
 // Uncomment line below for detailed mongo logs
-// mongoose.set("debug", true);
+mongoose.set("debug", true);
 
 const games = new mongoose.Schema({
   _id: { type: String, select: false },
